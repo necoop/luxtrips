@@ -1,0 +1,339 @@
+body {
+  font-family: "Forum";
+  font-size: 16px;
+  line-height: 18px;
+  background-color: gray;
+  min-height: 2000px;
+}
+.hidden {
+  display: none;
+}
+
+//Скрытие панели навигации
+.navbar-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-out;
+}
+.navbar-visible {
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+// .hamburger-hidden {
+//   transform: translateY(-100%);
+//   transition: transform 0.3s ease-out;
+//   transition-duration: 0.25s;
+// }
+// .hamburger-visible {
+//   transform: translateY(0);
+//   transition: transform 0.3s ease-out;
+//   transition-duration: 0.25s;
+// }
+// .hamburger {
+//   display: none;
+// }
+
+//Меню навигации
+.navbar__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  padding-top: 24px;
+  z-index: 1;
+  a {
+    letter-spacing: 0.04em;
+    color: #000;
+  }
+}
+.navbar__menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  & a {
+    transition: 0.3s ease;
+  }
+  & a:hover {
+    color: #fff;
+  }
+}
+.humburger__button {
+  display: none;
+}
+.call__me__btn {
+  transition: 0.3s ease all;
+  padding: 0;
+  border-radius: 60px;
+  border: 1.5px solid rgba($color: #000000, $alpha: 0);
+  text-transform: uppercase;
+  line-height: 18px;
+  --bs-btn-color: #000;
+  --bs-btn-bg: none;
+  --bs-btn-border-color: none;
+  --bs-btn-hover-color: none;
+  --bs-btn-hover-bg: none;
+  --bs-btn-hover-border-color: none;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: none;
+  --bs-btn-active-border-color: none;
+  --bs-btn-active-bg: #fff;
+  display: flex;
+  gap: 8px;
+  .call__me__left,
+  .call__me__right {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    align-self: center;
+    height: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .call__me__left {
+    padding-left: 25px;
+    border-left: 1px solid #fff;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+  .call__me__middle {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    height: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba($color: #000000, $alpha: 0);
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url(../img/call_btn_up.svg);
+      width: 22px;
+      height: 9px;
+      top: -12px;
+      transition: 0.3s ease all;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url(../img/call_btn_up.svg);
+      width: 22px;
+      height: 9px;
+      bottom: -12px;
+      left: 0;
+      transform: rotate(180deg);
+      transition: 0.3s ease all;
+    }
+  }
+  .call__me__right {
+    padding-right: 25px;
+    border-right: 1px solid #fff;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+  }
+}
+.call__me__btn:hover {
+  background-color: #fff;
+  border: 1.5px solid #000;
+  .call__me__middle {
+    &::before,
+    &::after {
+      background-image: url(../img/call_btn_hover.svg);
+    }
+  }
+}
+/* Гамбургер*/
+
+#hamburger__menu {
+  display: none;
+  z-index: 1000;
+  // position: relative;
+}
+#menu__toggle {
+  opacity: 0;
+}
+#menu__btn {
+  display: flex; /* используем flex для центрирования содержимого */
+  align-items: center; /* центрируем содержимое кнопки */
+  position: static;
+  top: 31px;
+  right: 46px;
+  width: 60px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 100;
+  position: sticky;
+}
+#menu__btn > span,
+#menu__btn > span::before,
+#menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+}
+#menu__btn > span::before {
+  content: "";
+  top: -11px;
+  width: 46px;
+  right: 0;
+}
+#menu__btn > span::after {
+  content: "";
+  top: 11px;
+}
+#menu__box {
+  display: block;
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  padding: 120px 0 63px 0;
+  list-style: none;
+  text-align: start;
+  background: #e2d3ce;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition-duration: 0.25s;
+  top: 0;
+  overflow-x: hidden;
+  min-height: 100%;
+} 
+
+/* элементы меню */
+.menu__item {
+  display: block;
+  color: #000;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+}
+#menu__box > :not(:first-child) {
+  margin-top: 66px;
+}
+#menu__toggle {
+  position: fixed;
+}
+#menu__toggle:checked ~ #menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ #menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ #menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ #menu__box {
+  // visibility: visible;
+  left: 0;
+  transform: translateX(0);
+}
+#menu__btn > span,
+#menu__btn > span::before,
+#menu__btn > span::after {
+  transition-duration: 0.25s;
+}
+
+.menu__item {
+  transition-duration: 0.25s;
+}
+/* Гамбургер окончание */
+
+#menu__box {
+  & a {
+    font-size: 24px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar__menu {
+    gap: 15px;
+  }
+}
+@media (max-width: 991px) {
+  #hamburger__menu {
+    display: inline-block;
+  }
+  body > ul > li:nth-child(1) > a > img {
+    width: 76px;
+    height: 40px;
+  }
+  .call__me__btn {
+    border: 1.5px solid #fff;
+    & .call__me__left {
+      padding-left: 12px;
+      border: none;
+    }
+    & .call__me__right {
+      padding-right: 12px;
+      border: none;
+    }
+    & .call__me__middle,
+    &:hover .call__me__middle {
+      border: none;
+      &::before,
+      &::after {
+        background-image: none;
+      }
+    }
+  }
+  .navbar__box > li:nth-child(1) {
+    order: 2;
+  }
+  .navbar__box > li:nth-child(3) {
+    order: 1;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .navbar__box > li:nth-child(2) {
+    display: none;
+  }
+  .hamburger {
+    display: list-item;
+    order: 3;
+  }
+  .call__me__right {
+    display: none;
+  }
+  .call__me__middle {
+    border-left: none;
+    padding-right: 12px;
+    align-self: center;
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+  .call__me__btn {
+    height: 36px;
+    .call__me__left,
+    .call__me__middle {
+      height: 36px;
+    }
+  }
+
+  .call__me__btn {
+    width: 88px;
+  }
+}
+@media (max-width: 575px) {
+  .navbar__box {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.romb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 100%;
+  padding-top: 100%;
+  background-color: red;
+}
