@@ -19,8 +19,9 @@
     <nav class="nav__menu">
         <ul class="navbar__box navbar navbar-default fixed-top container">
             <li>
-                <a href="http://index.html">
-                    <img src="./img/logo.png" alt="Logo">
+                <a href="http://index.html" class="logo__img">
+                    <img src="./img/logo.png" alt="Logo" class="logo__black"><img src="./img/logo_white.png" alt="Logo"
+                        class="logo__white">
                 </a>
             </li>
             <li>
@@ -48,11 +49,15 @@
                     <label id="menu__btn" for="menu__toggle">
                         <span></span>
                     </label>
-                    
+
                 </div>
             </li>
         </ul>
-            <ul id="menu__box">
+        <div class="menu__box__outer" id="menu__box">
+            <div class="menu__img__box">
+                <img src="./img/romb.svg">
+            </div>
+            <ul class="mobile__menu">
                 <li><a class="menu__item" href="#">Home</a></li>
                 <li><a class="menu__item" href="#">Luxury packages</a></li>
                 <li><a class="menu__item" href="#">Book with us</a></li>
@@ -60,8 +65,20 @@
                 <li><a class="menu__item" href="#">Contact</a></li>
                 <li><a class="menu__item" href="#">Client Area</a></li>
             </ul>
+        </div>
     </nav>
-    
+    <section class="main container">
+        <div class="top__header">
+            <div class="top__header__box">
+                <h4>the world’s most</h4>
+            </div>
+        </div>
+        <div class="main__title">
+            <h1 class="text-center">extra ordinary</h1>
+            <h2 class="text-center">Places</h2>
+        </div>
+    </section>
+
     <script src="./scipts/bootstrap.bundle.min.js"></script>
     <script src="./scipts/jquery-3.6.3.min.js"></script>
     <script src="./scipts/main.js"></script>
