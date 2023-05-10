@@ -34,3 +34,18 @@ menuTouggle.change(function () {
     menuBox.css("transform", "translateX(100%)");
   }
 });
+
+// Ограничение выбора дат в календаре
+
+// $(function() {
+//   $('#datepicker').datepicker({
+//     beforeShowDay: function(date) {
+//       var day = date.getDate();
+//       if ((day >= 1 && day <= 10) || day === 20) {
+//         return [true, 'selectable'];
+//       } else {
+//         return [false, ''];
+//       }
+//     }
+//   });
+// });

@@ -68,33 +68,98 @@
         </div>
     </nav>
     <section class="main container">
+        <div class="_ibg">
+            <img src="./img/bg1.jpg" alt="">
+        </div>
         <div class="top__header">
             <div class="top__header__box">
-                <h4>the world’s most</h4>
+                <h4>the<br>world’s<br>most</h4>
             </div>
         </div>
         <div class="main__title">
-            <h1 class="text-center">extra ordinary</h1>
-            <h2 class="text-center">Places</h2>
+            <div class="main__title__box">
+                <h1 class="text-center">extra<br>ordinary</h1>
+                <h2 class="text-center">Places</h2>
+            </div>
         </div>
-        <div class="search__box">
-            <div class="search__box__top">
-                <div class="search__box__inner">
-                    <div class="search__box__left"></div>
-                    <div class="search__box__center">
-                        <img src="./img/call_btn_up.svg">
+        <div class="search__box__outer">
+            <div class="search__box">
+                <div class="search__box__top">
+                    <div class="search__box__inner">
+                        <div class="search__box__left"></div>
+                        <div class="search__box__center">
+                            <img src="./img/call_btn_up.svg">
+                        </div>
+                        <div class="search__box__right"></div>
                     </div>
-                    <div class="search__box__right"></div>
+                </div>
+                <div class="search__under__top">
+                    <span>find your journey</span>
                 </div>
             </div>
-            <div class="search__under__top">
-                <span>find your journey</span>
+            <div class="search__box__bottom">
+                <div class="destination__box">
+                    <div class="title">
+                        <img src="./img/icon_destination.svg" alt="">
+                        <span>Destination</span>
+                    </div>
+                    <select name="destination" id="destination">
+                        <option value="" disabled selected>Where are you going?</option>
+                        <option value="">Africa</option>
+                        <option value="">Botswana</option>
+                        <option value="">Turkey</option>
+                        <option value="">Thailand</option>
+                        <option value="">Zimbabve</option>
+                    </select>
+                </div>
+                <div class="type__box justify__right">
+                    <div class="title">
+                        <img src="./img/icon_travel.svg" alt="">
+                        <span>Travel type</span>
+                    </div>
+                    <select name="travel__type" id="travel__type">
+                        <option value="" selected>Adventure Travel</option>
+                        <option value="">Luxury Travel</option>
+                        <option value="">History Travel</option>
+                        <option value="">Romantic Travel</option>
+                    </select>
+                </div>
+                <div class="calendar__box justify__right">
+                    <div class="title">
+                        <img src="./img/icon_calendar.svg" alt="">
+                        <span>When</span>
+                    </div>
+                    <input type="date" name="" id="datepicker" class="calendar__picker">
+                </div>
+                <div class="travelers__box justify__right">
+                    <div class="title">
+                        <img src="./img/icon_travellers.svg" alt="">
+                        <span>Travellers</span>
+                    </div>
+                    <select name="persons" id="persons">
+                        <option value="">1 Person</option>
+                        <option value="" selected>2 Persons</option>
+                        <option value="">3 Persons</option>
+                        <option value="">4 Persons</option>
+                        <option value="">5 Persons</option>
+                        <option value="">6 Persons</option>
+                        <option value="">7 Persons</option>
+                        <option value="">8 Persons</option>
+                    </select>
+                </div>
+                <div class="find__box justify__right">
+                    <div class="find__btn">
+                        <img src="./img/icon_search.svg" alt="">
+                        <span>Find</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <script src="./scipts/bootstrap.bundle.min.js"></script>
     <script src="./scipts/jquery-3.6.3.min.js"></script>
+    <script src="./scipts/jquery-ui.min.js"></script>
     <script src="./scipts/main.js"></script>
 </body>
 
